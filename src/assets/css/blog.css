@@ -1,0 +1,486 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Navbar*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(181, 181, 181);
+  padding: 10px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+nav .left ul {
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .left ul img {
+  margin-right: 40px;
+}
+
+nav .right a {
+  text-decoration: none;
+  background-color: orangered;
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+}
+
+nav .right a:hover {
+  background-color: rgb(196, 59, 10);
+}
+
+nav .left ul {
+  list-style: none;
+}
+
+nav .left ul li a {
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  margin-right: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav .left ul li a:hover {
+  color: orangered;
+  font-size: 20px;
+}
+
+nav .hamburger {
+  display: none;
+}
+
+#hamburger-bars-items {
+  display: none;
+  margin-top: -50px;
+  position: fixed;
+  width: 100%;
+}
+
+#hamburger-bars-items a {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.589);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* BLOG */
+.title {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 17px;
+}
+
+.title h1 span {
+  color: orangered;
+}
+
+#blog-section {
+  width: 85%;
+  margin: 30px auto;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-img img {
+  width: 600px;
+  height: 400px;
+  margin-right: 50px;
+}
+
+.blog-des {
+  margin-right: 190px;
+}
+
+.blog-des h5 {
+  font-size: 20px;
+  margin-bottom: -1px;
+}
+
+.blog-des-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.blog-des-2 p {
+  margin-left: 10px;
+}
+
+.paragraf {
+  width: 85%;
+  margin: 30px auto;
+}
+
+/* ADD PROJECT */
+
+.project {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.project span {
+  color: orangered;
+}
+
+form {
+  width: 400px;
+  margin: 50px auto;
+}
+
+form h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+  margin-top: 100px;
+}
+
+form h1 span {
+  color: #ec4d37;
+}
+
+form .date {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+form .date input {
+  width: 100%;
+}
+form .date .date-3 {
+  padding-left: 40px;
+}
+
+.name input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.date2,
+.date3,
+.descrption,
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.button-group button {
+  background-color: #ec4d37;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border-style: none;
+  color: white;
+  font-size: 13px;
+  margin-left: 340px;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.checkbox .techno {
+  margin-bottom: 15px;
+}
+
+.checkbox-item {
+  display: flex;
+}
+
+.checkbox-item-1 {
+  display: flex;
+}
+
+.checkbox-item-1 input {
+  width: 20%;
+}
+
+.checkbox-item-1 label {
+  width: 100%;
+  margin-left: 5px;
+}
+
+form .tech {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-weight: 200;
+  margin-left: -20px;
+}
+
+form .tech label {
+  margin-right: 80px;
+}
+
+form .tech-2 {
+  display: flex;
+  margin-bottom: 20px;
+  font-weight: 200;
+  margin-left: -20px;
+}
+
+form .tech-2 label {
+  margin-right: 80px;
+}
+
+form .input-blog-image-group {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  background: #f4f3f3;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form .input-blog-image-group label p {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+form .input-blog-image-group label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog-h2 h2 {
+  color: #000000;
+  text-align: center;
+}
+
+.blog-h2 h2 span {
+  color: #ec4d37;
+}
+
+/* * Blog list * */
+
+.blog .blog-list {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.blog .blog-list .blog-list-item {
+  width: 300px;
+  padding: 15px 15px 5px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #dbdbdb;
+  border-radius: 8px;
+}
+
+.blog .blog-list .blog-list-item .blog-image img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog .blog-list .blog-list-item {
+  text-align: center;
+}
+
+.blog .blog-list .blog-list-item h1 {
+  font-size: 23px;
+}
+
+.blog .blog-list .blog-list-item h5 {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.blog .blog-list .blog-list-item .p-1 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.blog .blog-list .blog-list-item .p-2 {
+  font-size: 12px;
+}
+
+.blog .blog-list .blog-list-item .p-3 {
+  font-size: 30px;
+}
+
+.blog .blog-list .blog-list-item .p-3 i {
+  padding-left: 10px;
+}
+
+.blog .blog-list .blog-list-item .p-4 {
+  font-size: 12px;
+  text-align: end;
+  margin-bottom: 0px;
+  font-style: italic;
+}
+
+.blog .blog-list .blog-list-item .btn-group {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.blog .blog-list .btn-group .btn-edit {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #dbdbdb;
+}
+
+.blog-list .btn-group .btn-post {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #ec4d37;
+  color: #fff;
+}
+
+/* RESPONSIVE LAYOUT___________________________________________________________ */
+
+@media screen and (max-width: 850px) {
+  #blog-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .blog-img img {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 13px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav {
+    padding: 8px 20px;
+  }
+
+  nav .left ul li {
+    display: none;
+  }
+
+  nav .right {
+    display: none;
+  }
+
+  nav .hamburger {
+    display: block;
+  }
+
+  /* (BLOG) */
+
+  .title {
+    font-size: 13px;
+    margin-top: 80px;
+  }
+
+  #blog-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .blog-img img {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+  }
+
+  .blog-des h5 {
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  .blog-des-2 p {
+    font-size: 13px;
+  }
+
+  .paragraf p {
+    font-size: 12px;
+  }
+
+  /* (FROM) */
+
+  .project {
+    font-size: 23px;
+  }
+
+  form {
+    width: 300px;
+  }
+
+  form label {
+    font-size: 13px;
+  }
+
+  .button-group button {
+    margin-left: 235px;
+  }
+
+  /* BLOG LIST  */
+  .blog .blog-list {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-top: 80px;
+    margin-bottom: 80px;
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; */
+  }
+}

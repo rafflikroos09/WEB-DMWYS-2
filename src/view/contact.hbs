@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="../assets/img/logo2.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <title>🎭 Personal Web</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="left">
+        <ul>
+          <img src="../assets/img/logo2.png" alt="" />
+          <li><a href="/home">Home</a></li>
+          <li><a href="/blog">My Project</a></li>
+          <li><a href="/testi">Testimonial</a></li>
+        </ul>
+      </div>
+
+      <div class="right">
+        <a href="contact.html">Contact Me</a>
+      </div>
+
+      <div class="hamburger">
+        <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger()">
+          <i class="fa-solid fa-bars fa-xl"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="hamburger-bars-items" class="hamburger-bars-items">
+      <a href="/home">Home</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="/testi" class="active">Testimonial</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <!-- NAVBAR END -->
+    <!-- INPUT FORM -->
+    <form>
+      <div class="title">
+        <h1>GET IN <span>TOUCH</span></h1>
+      </div>
+      <br />
+
+      <div class="nama">
+        <label for="nama">Name</label>
+        <input type="text" id="nama" />
+      </div>
+
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+      </div>
+
+      <div class="phone">
+        <label for="phone">Phone Number</label>
+        <input type="number" id="phone" />
+      </div>
+
+      <div class="subject">
+        <label for="subject">Subject</label>
+        <select id="subject">
+          <option value="" hidden>Select</option>
+          <option>Frontend</option>
+          <option>Backend</option>
+          <option>Fullstack</option>
+        </select>
+      </div>
+
+      <div class="message">
+        <label for="message">Message</label>
+        <textarea name="" id="message" cols="30" rows="10"></textarea>
+      </div>
+
+      <div>
+        <button type="button" onclick="getData()">Submit</button>
+      </div>
+    </form>
+    <!-- END INPUT FORM -->
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/nav.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Navbar*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(181, 181, 181);
+  padding: 10px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+nav .left ul {
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .left ul img {
+  margin-right: 40px;
+}
+
+nav .right a {
+  text-decoration: none;
+  background-color: orangered;
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+}
+
+nav .right a:hover {
+  background-color: rgb(196, 59, 10);
+}
+
+nav .left ul {
+  list-style: none;
+}
+
+nav .left ul li a {
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  margin-right: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav .left ul li a:hover {
+  color: orangered;
+  font-size: 20px;
+}
+
+nav .left ul li :active {
+  color: orangered;
+}
+
+nav .hamburger {
+  display: none;
+}
+
+#hamburger-bars-items {
+  display: none;
+  margin-top: -40px;
+  position: fixed;
+  width: 100%;
+}
+
+#hamburger-bars-items a {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.589);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* Form  */
+
+form {
+  width: 350px;
+  margin: 50px auto;
+}
+
+form .title {
+  margin-top: 90px;
+  text-align: center;
+}
+
+form .title span {
+  color: orangered;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+#subject {
+  width: 370px;
+}
+
+form label {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+form div {
+  margin-top: 10px;
+}
+
+form div button {
+  margin-left: 80%;
+  background-color: orangered;
+  padding: 8px 20px;
+  color: white;
+  border-radius: 50px;
+  border-style: none;
+  font-size: 15px;
+}
+
+/* RESPONSIVE LAYOUT ________________________________________________________ */
+
+@media screen and (max-width: 500px) {
+  nav {
+    padding: 8px 20px;
+  }
+
+  nav .left ul li {
+    display: none;
+  }
+
+  nav .right {
+    display: none;
+  }
+
+  nav .hamburger {
+    display: block;
+  }
+
+  form {
+    width: 300px;
+  }
+
+  form .title {
+    font-size: 13px;
+  }
+
+  form label {
+    font-size: 13px;
+  }
+
+  #subject {
+    width: 320px;
+  }
+}
