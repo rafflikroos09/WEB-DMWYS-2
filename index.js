@@ -15,6 +15,10 @@ app.get("/blog", (req, res) => {
   res.render("blog");
 });
 
+app.get("/blogdetail", (req, res) => {
+  res.render("blogdetail");
+});
+
 app.get("/testi", (req, res) => {
   res.render("testi");
 });

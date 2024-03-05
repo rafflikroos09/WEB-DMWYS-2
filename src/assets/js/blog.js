@@ -40,7 +40,7 @@ function renderBlog() {
         <img src="../assets/img/blog.jpg" alt="">
       </div>
       <div class="blog-title">
-        <h1>${dataBlog[index].title}</h1>
+        <h1><a href="/blogdetail">${dataBlog[index].title}</a></h1>
         <h5>${dataBlog[index].startDate} s/d ${dataBlog[index].endDate}</h5>
       </div>
       <div class="blog-detail">

@@ -330,6 +330,11 @@ form .input-blog-image-group label {
   font-size: 23px;
 }
 
+.blog .blog-list .blog-list-item h1 a {
+  text-decoration: none;
+  color: #000000;
+}
+
 .blog .blog-list .blog-list-item h5 {
   font-size: 12px;
   font-style: italic;
