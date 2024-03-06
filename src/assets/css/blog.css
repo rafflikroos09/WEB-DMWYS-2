@@ -393,6 +393,15 @@ form .input-blog-image-group label {
   color: #fff;
 }
 
+.blog-list .btn-group a {
+  text-decoration: none;
+}
+
+.blog-list .btn-group a:hover {
+  background-color: #b23d2e;
+  color: rgb(192, 189, 189);
+}
+
 /* RESPONSIVE LAYOUT___________________________________________________________ */
 
 @media screen and (max-width: 850px) {

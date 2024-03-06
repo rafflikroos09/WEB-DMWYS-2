@@ -49,11 +49,11 @@
         <img src="../assets/img/blog.jpg" alt="" />
       </div>
       <div class="blog-title">
-        <h1><a href="/blogdetail">{{id}}</a></h1>
+        <h1><a href="/blogdetail">{{this.title}}</a></h1>
         <h5>${dataBlog[index].startDate} s/d ${dataBlog[index].endDate}</h5>
       </div>
       <div class="blog-detail">
-        <p class="p-1">{{this.content}}</p>
+        <p class="p-1">{{data.content}}</p>
         <p class="p-2"> ${getFullDate(dataBlog[index].postAt)} | Budi Kroos</p>
         <p class="p-3"> ${dataBlog[index].tech.map((item) => `<i class="${item}"></i>`).join("")}</p>
       </div>

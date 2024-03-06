@@ -48,48 +48,48 @@
     <div class="blog">
       <div class="blog-form">
         <div class="form-container">
-          <form onsubmit="addBlog(event)">
+          <form method="post" action="/blog">
             <h1>Add <span>My Project</span></h1>
             <div>
               <label for="input-blog-title">Project Name</label>
-              <input id="input-blog-title" />
+              <input id="input-blog-title" name="title" />
             </div>
             <div class="date">
               <div class="date-2">
                 <label for="start" class="start">Start Date</label>
-                <input type="date" id="start" />
+                <input type="date" id="start" name="startDate" />
               </div>
 
               <div class="date-3">
                 <label for="end" class="end">End Date</label>
-                <input type="date" id="end" />
+                <input type="date" id="end" name="endDate" />
               </div>
             </div>
             <div>
               <label for="input-blog-content">Description</label>
-              <textarea id="input-blog-content" cols="30" rows="10"></textarea>
+              <textarea id="input-blog-content" cols="30" rows="10" name="content"></textarea>
             </div>
 
             <div class="checkbox">
               <div class="techno"><label>Technologies</label></div>
               <div class="checkbox-item">
                 <div class="checkbox-item-1" style="margin-left: 18px" >
-                  <input type="checkbox" id="node-js" name="tech-icon" value="fa-brands fa-node-js  " />
+                  <input type="checkbox" id="node-js" name="techIcon" value="fa-brands fa-node-js  " />
                   <label for="node-js">Node JS</label>
                 </div>
                 <div class="checkbox-item-1" style="margin-left: 18px">
-                  <input type="checkbox" id="golang" name="tech-icon" value="fa-brands fa-golang  " />
+                  <input type="checkbox" id="golang" name="techIcon" value="fa-brands fa-golang  " />
                   <label for="golang">Golang</label>
                 </div>
               </div>
 
               <div class="checkbox-item">
                 <div class="checkbox-item-1" style="margin-left: 18px">
-                  <input type="checkbox" id="react-js" name="tech-icon" value="fa-brands fa-react  " />
+                  <input type="checkbox" id="react-js" name="techIcon" value="fa-brands fa-react  " />
                   <label for="react">React JS</label>
                 </div>
                 <div class="checkbox-item-1" style="margin-left: 18px">
-                  <input type="checkbox" id="javascript" name="tech-icon" value="fa-brands fa-js  " />
+                  <input type="checkbox" id="javascript" name="techIcon" value="fa-brands fa-js  " />
                   <label for="javascript">Javascript</label>
                 </div>
               </div>
@@ -112,6 +112,8 @@
         </div>
       </div>
 
+      {{!-- MY PROJECT --}}
+
       <hr class="line" />
       <div class="blog-h2">
         <h2>My <span>Project</span></h2>
@@ -127,12 +129,12 @@
             </div>
             <div class="blog-title">
               <h1><a href="/blogdetail/{{@index}}" target="_blank">{{this.title}}</a></h1>
-              <h5>${dataBlog[index].startDate} s/d ${dataBlog[index].endDate}</h5>
+              <h5>{{this.startDate}} <span style="font-weight: 600;"> s/d </span> {{this.endDate}}</h5> 
             </div>
             <div class="blog-detail">
               <p class="p-1">{{this.content}}</p>
               <p class="p-2"></p>
-              <p class="p-3"></p>
+              <p class="p-3">{{this.techIcon}}</p>
             </div>
             <div class="btn-group">
               <button class="btn-edit">Edit Post</button>

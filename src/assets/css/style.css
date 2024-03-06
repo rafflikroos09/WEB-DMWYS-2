@@ -110,8 +110,11 @@ textarea {
   margin-top: 5px;
   margin-bottom: 15px;
 }
+
 #subject {
-  width: 370px;
+  width: 350px;
+  background-color: white;
+  cursor: pointer;
 }
 
 form label {
@@ -131,6 +134,12 @@ form div button {
   border-radius: 50px;
   border-style: none;
   font-size: 15px;
+  cursor: pointer;
+}
+
+form div button:hover {
+  background-color: rgb(206, 71, 22);
+  color: rgb(179, 172, 172);
 }
 
 /* RESPONSIVE LAYOUT ________________________________________________________ */
