@@ -335,6 +335,13 @@ form .input-blog-image-group label {
   color: #000000;
 }
 
+.blog .blog-list .blog-list-item h1 a:hover {
+  text-decoration: none;
+  color: #ec4d37;
+  font-size: 25px;
+  transition-duration: 200ms;
+}
+
 .blog .blog-list .blog-list-item h5 {
   font-size: 12px;
   font-style: italic;

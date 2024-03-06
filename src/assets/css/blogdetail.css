@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Navbar*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(181, 181, 181);
+  padding: 10px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+nav .left ul {
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .left ul img {
+  margin-right: 40px;
+}
+
+nav .right a {
+  text-decoration: none;
+  background-color: orangered;
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+}
+
+nav .right a:hover {
+  background-color: rgb(196, 59, 10);
+}
+
+nav .left ul {
+  list-style: none;
+}
+
+nav .left ul li a {
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  margin-right: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav .left ul li a:hover {
+  color: orangered;
+  font-size: 20px;
+}
+
+nav .hamburger {
+  display: none;
+}
+
+#hamburger-bars-items {
+  display: none;
+  margin-top: -50px;
+  position: fixed;
+  width: 100%;
+}
+
+#hamburger-bars-items a {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.589);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* BLOG */
+.blog-content {
+  margin: auto;
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.blog-content .blog-image img {
+  height: 400px;
+  width: 500px;
+}
+
+.blog-content .blog-title h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.blog-content .blog-title h5 {
+  text-align: center;
+}
+
+/* .blog-content .blog-title */
+/* BLOG END */
+
+/* RESPONSIVE LAYOUT_____________________________________________________________________________________________ */
+
+@media screen and (max-width: 550px) {
+  nav {
+    padding: 8px 20px;
+  }
+
+  nav .left ul li {
+    display: none;
+  }
+
+  nav .right {
+    display: none;
+  }
+
+  nav .hamburger {
+    display: block;
+  }
+}
