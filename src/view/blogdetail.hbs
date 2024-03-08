@@ -49,21 +49,37 @@
         <img src="../assets/img/blog.jpg" alt="" />
       </div>
       <div class="blog-title">
-        <h1><a href="/blogdetail">{{this.title}}</a></h1>
-        <h5>${dataBlog[index].startDate} s/d ${dataBlog[index].endDate}</h5>
+        <h1><a href="/blogdetail">{{data.title}}</a></h1>
+        <h5>Durasi : {{data.diff}}</h5>
       </div>
       <div class="blog-detail">
         <p class="p-1">{{data.content}}</p>
-        <p class="p-2"> ${getFullDate(dataBlog[index].postAt)} | Budi Kroos</p>
-        <p class="p-3"> ${dataBlog[index].tech.map((item) => `<i class="${item}"></i>`).join("")}</p>
+      </div>
+
+      <div class="blog-icon">
+        {{#if data.js}}
+          <img src="../assets/img/js.svg" alt="js.img" />
+        {{/if}}
+
+        {{#if data.react}}
+          <img src="../assets/img/react.svg" alt="react.img" />
+        {{/if}}
+
+        {{#if data.golang}}
+          <img src="../assets/img/golang.svg" alt="golang.img" />
+        {{/if}}
+
+        {{#if data.nodejs}}
+          <img src="../assets/img/node.svg" alt="node.img" />
+        {{/if}}
       </div>
       {{! <div class="btn-group">
         <button class="btn-edit">Edit Post</button>
         <button class="btn-post">Delete Post</button>
       </div> }}
-      <div class="blog-time">
+      {{! <div class="blog-time">
         <p class="p-4">${getDistanceTime(dataBlog[index].postAt)}</p>
-      </div>
+      </div> }}
       {{!-- {{/each}} --}}
     </div>
     <!-- BLOG END -->

@@ -48,11 +48,11 @@
     <div class="blog">
       <div class="blog-form">
         <div class="form-container">
-          <form method="post" action="/blog">
+          <form method="post" action="/blog-edit/{{id}}/update">
             <h1>Add <span>My Project</span></h1>
             <div>
               <label for="input-blog-title">Project Name</label>
-              <input id="input-blog-title" name="title" />
+              <input id="input-blog-title" name="title" value="{{data.title}}" />
             </div>
             <div class="date">
               <div class="date-2">
@@ -74,7 +74,7 @@
               <div class="techno"><label>Technologies</label></div>
               <div class="checkbox-item">
                 <div class="checkbox-item-1" style="margin-left: 18px" >
-                  <input type="checkbox" id="nodejs" name="nodejs" value="fa-brands fa-node-js  " />
+                  <input type="checkbox" id="node-js" name="nodejs" value="fa-brands fa-node-js  " />
                   <label for="node-js">Node JS</label>
                 </div>
                 <div class="checkbox-item-1" style="margin-left: 18px">
@@ -153,7 +153,7 @@
               {{/if}}
             </div>
             <div class="btn-group">
-              <a class="btn-edit" href="/edit-blog/{{@index}}">Edit Post</a>
+              <a class="btn-edit" href="">Edit Post</a>
               <a class="btn-post" href="/delete-blog/{{@index}}">Delete Post</a>
             </div>
             <div class="blog-time">

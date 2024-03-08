@@ -354,24 +354,18 @@ form .input-blog-image-group label {
   text-align: center;
 }
 
-.blog .blog-list .blog-list-item .p-2 {
-  font-size: 12px;
+.blog-icon {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+  height: 40px;
 }
 
-.blog .blog-list .blog-list-item .p-3 {
-  font-size: 30px;
-}
-
-.blog .blog-list .blog-list-item .p-3 i {
-  padding-left: 10px;
-}
-
-.blog .blog-list .blog-list-item .p-4 {
-  font-size: 12px;
-  text-align: end;
-  margin-bottom: 0px;
-  font-style: italic;
-}
+/* .blog-icon img {
+  display: flex;
+  justify-content: center;
+} */
 
 .blog .blog-list .blog-list-item .btn-group {
   text-align: center;
@@ -382,26 +376,33 @@ form .input-blog-image-group label {
   padding: 5px 10px;
   border: 0;
   border-radius: 4px;
-  background: #dbdbdb;
+  background-color: orangered;
+  color: white;
+}
+
+.blog .blog-list .btn-group .btn-edit:hover {
+  background-color: #c4c4c4;
+  color: #000000;
+  transition-duration: 500ms;
 }
 
 .blog-list .btn-group .btn-post {
   padding: 5px 10px;
   border: 0;
   border-radius: 4px;
-  background: #ec4d37;
-  color: #fff;
+  background-color: #c4c4c4;
+  color: #000000;
+}
+
+.blog-list .btn-group .btn-post:hover {
+  background-color: #ec4d37;
+  color: white;
+  transition-duration: 500ms;
 }
 
 .blog-list .btn-group a {
   text-decoration: none;
 }
-
-.blog-list .btn-group a:hover {
-  background-color: #b23d2e;
-  color: rgb(192, 189, 189);
-}
-
 /* RESPONSIVE LAYOUT___________________________________________________________ */
 
 @media screen and (max-width: 850px) {

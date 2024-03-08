@@ -231,7 +231,11 @@ nav .hamburger {
 
   .card {
     width: 80%;
-    margin-top: -20;
+    margin-top: 20px;
+  }
+
+  .card-image {
+    height: 250px;
   }
 
   .content-2 .btn {

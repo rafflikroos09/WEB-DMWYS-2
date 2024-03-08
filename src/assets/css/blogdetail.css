@@ -109,6 +109,14 @@ nav .hamburger {
   text-align: center;
 }
 
+.blog-icon {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+  height: 40px;
+}
+
 /* .blog-content .blog-title */
 /* BLOG END */
 
