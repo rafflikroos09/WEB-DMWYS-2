@@ -1,6 +1,13 @@
 import express from "express";
+// import squalize here
+import { Sequelize, QueryTypes } from "sequelize";
+import connection from "./src/config/connection.js";
+
 const app = express();
 const port = 3000;
+
+//create instansi sequalize connection
+const sequelizeConfig = new Sequelize(connection.development);
 
 // NOTE :
 // request = dari client ke server
@@ -64,16 +71,43 @@ function home(req, res) {
   res.render("home");
 }
 
-function blog(req, res) {
-  res.render("blog", { data });
+async function blog(req, res) {
+  try {
+    const QueryName = "SELECT * FROM blogs ORDER BY id DESC";
+
+    const blog = await sequelizeConfig.query(QueryName, { type: QueryTypes.SELECT });
+
+    const obj = blog.map((data) => {
+      return {
+        ...data,
+        author: "Budi Kroos",
+      };
+    });
+    res.render("blog", { data: obj });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function blogdetail(req, res) {
-  const id = req.params.id;
+async function blogdetail(req, res) {
+  try {
+    const id = req.params.id;
+    const QueryName = `SELECT * FROM blogs WHERE id=${id}`;
 
-  res.render("blogdetail", {
-    data: data[id],
-  });
+    const blog = await sequelizeConfig.query(QueryName, { type: QueryTypes.SELECT });
+
+    const obj = blog.map((data) => {
+      return {
+        ...data,
+        author: "Budi Kroos",
+      };
+    });
+    console.log(obj);
+
+    res.render("blogdetail", { data: obj[0] });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function testi(req, res) {
@@ -84,40 +118,50 @@ function contact(req, res) {
   res.render("contact");
 }
 
-function handleBlog(req, res) {
-  // const title = req.body.title;
-  // const startDate = req.body.startDate;
-  // const endDate = req.body.endDate;
-  // const content = req.body.content;
+async function handleBlog(req, res) {
+  try {
+    // const { title, startDate, endDate, content, nodejs, golang, react, js } = req.body;
+    const { title, content } = req.body;
+    const image = "https://id.pinterest.com/pin/503840277078970767/";
 
-  const { title, startDate, endDate, content, nodejs, golang, react, js } = req.body;
+    // const QueryName = `INSERT INTO blogs(title, image, content, "createAt", "updateAt")
+    // VALUES ('${title}', '${image}', '${content}', NOW(), NOW())`;
 
-  data.push({
-    title,
-    startDate,
-    endDate,
-    content,
-    nodejs,
-    golang,
-    react,
-    js,
-    diff: getDiffDate(new Date(startDate), new Date(endDate)),
-  });
+    const QueryName = `INSERT INTO blogs(
+      title, image, content, "createdAt", "updatedAt")
+      VALUES ('${title}', '${image}', '${content}', NOW(), NOW())`;
 
-  res.redirect("/blog");
+    await sequelizeConfig.query(QueryName);
+
+    // data.push({
+    //   title,
+    //   startDate,
+    //   endDate,
+    //   content,
+    //   nodejs,
+    //   golang,
+    //   react,
+    //   js,
+    //   diff: getDiffDate(new Date(startDate), new Date(endDate)),
+    // });
+
+    res.redirect("/blog");
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function handleDeleteBlog(req, res) {
-  const { id } = req.params;
+async function handleDeleteBlog(req, res) {
+  try {
+    const { id } = req.params;
+    const QueryName = `DELETE FROM blogs WHERE id = ${id}`;
 
-  // if (confirm("Apkah anda yakin ?") == true) {
-  //   data.splice(id, 1);
-  // } else {
-  //   res.redirect("/blog");
-  // }
+    await sequelizeConfig.query(QueryName);
 
-  data.splice(id, 1);
-  res.redirect("/blog");
+    res.redirect("/blog");
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function handleEditBlog(req, res) {

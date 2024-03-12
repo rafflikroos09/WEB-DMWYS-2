@@ -129,11 +129,12 @@
               <img src="../assets/img/blog.jpg" alt="">
             </div>
             <div class="blog-title">
-              <h1><a href="/blogdetail/{{@index}}" target="_blank">{{this.title}}</a></h1>
+              <h1><a href="/blogdetail/{{this.id}}" target="_blank">{{this.title}}</a></h1>
               <h5>Durasi : {{this.diff}}</h5> 
             </div>
             <div class="blog-detail">
               <p class="p-1">{{this.content}}</p>
+              <p class="p-1">{{this.author}}</p>
             </div>
             <div class="blog-icon">
               {{#if this.js}}
@@ -154,7 +155,7 @@
             </div>
             <div class="btn-group">
               <a class="btn-edit" href="/edit-blog/{{@index}}">Edit Post</a>
-              <a class="btn-post" href="/delete-blog/{{@index}}">Delete Post</a>
+              <a class="btn-post" href="/delete-blog/{{this.id}}">Delete Post</a>
             </div>
             <div class="blog-time">
               <p class="p-4"></p>
