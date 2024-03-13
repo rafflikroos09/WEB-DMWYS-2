@@ -123,13 +123,24 @@ async function handleBlog(req, res) {
     // const { title, startDate, endDate, content, nodejs, golang, react, js } = req.body;
     const { title, content } = req.body;
     const image = "https://id.pinterest.com/pin/503840277078970767/";
+    // const diff = getDiffDate(new Date(startDate), new Date(endDate));
+    // const start_Date = new Date(startDate).toISOString();
+    // const end_Date = new Date(endDate).toISOString();
+    // const is_nodejs = nodejs ? true : false;
+    // const is_react = react ? true : false;
+    // const is_js = js ? true : false;
+    // const is_golang = golang ? true : false;
 
     // const QueryName = `INSERT INTO blogs(title, image, content, "createAt", "updateAt")
     // VALUES ('${title}', '${image}', '${content}', NOW(), NOW())`;
 
+    // const QueryName = `INSERT INTO blogs(
+    //   title, image, content, start_Date, end_Date, nodejs, react, js,golang, "createdAt", "updatedAt")
+    //   VALUES ('${title}', '${image}','${start_Date}','${end_Date}','${is_nodejs}', '${is_react}', '${is_golang}','${is_js}','${diff}','${content}', NOW(), NOW())`;
+
     const QueryName = `INSERT INTO blogs(
-      title, image, content, "createdAt", "updatedAt")
-      VALUES ('${title}', '${image}', '${content}', NOW(), NOW())`;
+        title, image, content,"createdAt", "updatedAt")
+        VALUES ('${title}', '${image}','${content}', NOW(), NOW())`;
 
     await sequelizeConfig.query(QueryName);
 
