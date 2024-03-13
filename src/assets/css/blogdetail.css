@@ -9,7 +9,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(181, 181, 181);
-  padding: 10px 80px;
+  padding: 0px 80px;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,17 +29,43 @@ nav .left ul img {
   margin-right: 40px;
 }
 
-nav .right a {
+nav .right {
+  display: flex;
+  gap: 15px;
+}
+
+nav .right .btn {
   text-decoration: none;
   background-color: orangered;
   padding: 8px 20px;
   border-radius: 10px;
   color: white;
   align-items: center;
+  margin-left: 30px;
+}
+nav .right .btn:hover {
+  background-color: rgb(196, 59, 10);
 }
 
-nav .right a:hover {
-  background-color: rgb(196, 59, 10);
+nav .right ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav .right ul li a {
+  text-decoration: none;
+  margin-left: 10px;
+  padding-left: 10px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+nav .right ul li a:hover {
+  color: #ec4d37;
+  font-size: 20px;
 }
 
 nav .left ul {

@@ -63,6 +63,8 @@ app.get("/delete-blog/:id", handleDeleteBlog);
 app.get("/edit-blog/:id", handleEditBlog);
 app.post("/blog/:id/update", handleUpdateBlog);
 app.get("/testi", testi);
+app.get("/login", login);
+app.get("/register", register);
 app.get("/contact", contact);
 
 const data = [];
@@ -112,6 +114,14 @@ async function blogdetail(req, res) {
 
 function testi(req, res) {
   res.render("testi");
+}
+
+function login(req, res) {
+  res.render("login");
+}
+
+function register(req, res) {
+  res.render("register");
 }
 
 function contact(req, res) {

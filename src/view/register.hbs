@@ -2,13 +2,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Detail | Personal web</title>
-    <link rel="stylesheet" href="../assets/css/blogdetail.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,500&display=swap" rel="stylesheet" />
-    <link rel="icon" href="assets/img/logo2.png" />
+    <link rel="icon" href="../assets/img/logo2.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <title>Registration</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -47,50 +48,34 @@
     </div>
 
     <!-- NAVBAR END -->
+    <!-- INPUT FORM -->
+    <form>
+      <div class="title">
+        <h1>REGIS<span>TRATION</span></h1>
+      </div>
+      <br />
 
-    <!-- BLOG -->
-    <div class="blog-content">
-      {{!-- {{#each data}} --}}
-      <div class="blog-image">
-        <img src="../assets/img/blog.jpg" alt="" />
-      </div>
-      <div class="blog-title">
-        <h1><a href="/blogdetail">{{data.title}}</a></h1>
-        <h5>Durasi : {{data.diff}}</h5>
-      </div>
-      <div class="blog-detail">
-        <p class="p-1">{{data.content}}</p>
+      <div class="nama">
+        <label for="nama">Name</label>
+        <input type="text" id="nama" />
       </div>
 
-      <div class="blog-icon">
-        {{#if data.js}}
-          <img src="../assets/img/js.svg" alt="js.img" />
-        {{/if}}
-
-        {{#if data.react}}
-          <img src="../assets/img/react.svg" alt="react.img" />
-        {{/if}}
-
-        {{#if data.golang}}
-          <img src="../assets/img/golang.svg" alt="golang.img" />
-        {{/if}}
-
-        {{#if data.nodejs}}
-          <img src="../assets/img/node.svg" alt="node.img" />
-        {{/if}}
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" id="email" />
       </div>
-      {{! <div class="btn-group">
-        <button class="btn-edit">Edit Post</button>
-        <button class="btn-post">Delete Post</button>
-      </div> }}
-      {{! <div class="blog-time">
-        <p class="p-4">${getDistanceTime(dataBlog[index].postAt)}</p>
-      </div> }}
-      {{!-- {{/each}} --}}
-    </div>
-    <!-- BLOG END -->
 
-    <script src="../assets/js/blog.js"></script>
-    <script src="../assets/js/blog.js"></script>
+      <div class="nama">
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <!-- END INPUT FORM -->
+
+    <script src="../assets/js/nav.js"></script>
   </body>
 </html>
