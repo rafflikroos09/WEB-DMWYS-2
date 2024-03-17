@@ -25,9 +25,15 @@
 
       <div class="right">
         <ul>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/login">Login</a></li>
-          <a href="/contact" class="btn">Contact Me</a>
+          {{#if isLogin}}
+            <li style="color: orangered;"><a href="#">{{user}}</a></li>
+
+            <a href="/contact" class="btn">Contact Me</a>
+            <li><a href="/login"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          {{else}}
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Login</a></li>
+          {{/if}}
         </ul>
       </div>
 

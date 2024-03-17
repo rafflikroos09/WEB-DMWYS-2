@@ -1,7 +1,9 @@
 import express from "express";
-// import squalize here
 import { Sequelize, QueryTypes } from "sequelize";
 import connection from "./src/config/connection.js";
+import bcrypt from "bcrypt";
+import session from "express-session";
+import flash from "express-flash";
 
 const app = express();
 const port = 3000;
@@ -22,6 +24,21 @@ app.set("views", "src/view");
 app.use("/assets", express.static("src/assets"));
 // body parser for req body
 app.use(express.urlencoded({ extended: false }));
+// INIT flash and Session
+app.use(flash());
+app.use(
+  session({
+    secret: "bla bla bla",
+    store: new session.MemoryStore(),
+    cookie: {
+      maxAge: 1000 * 60 * 60,
+      httpOnly: true,
+      secure: false,
+    },
+    saveUninitialized: true,
+    resave: false,
+  })
+);
 
 //DURATION CODE
 const getDiffDate = (startDate, endDate) => {
@@ -63,14 +80,20 @@ app.get("/delete-blog/:id", handleDeleteBlog);
 app.get("/edit-blog/:id", handleEditBlog);
 app.post("/blog/:id/update", handleUpdateBlog);
 app.get("/testi", testi);
-app.get("/login", login);
-app.get("/register", register);
+app.get("/register", formRegister);
+app.post("/register", register);
+app.get("/login", fromLogin);
+app.post("/login", login);
 app.get("/contact", contact);
 
-const data = [];
+// const data = [];
 
 function home(req, res) {
-  res.render("home");
+  console.log(req.session.isLogin);
+  res.render("home", {
+    isLogin: req.session.isLogin,
+    user: req.session.user,
+  });
 }
 
 async function blog(req, res) {
@@ -116,13 +139,75 @@ function testi(req, res) {
   res.render("testi");
 }
 
-function login(req, res) {
+function fromLogin(req, res) {
   res.render("login");
 }
 
-function register(req, res) {
+async function login(req, res) {
+  try {
+    const { email, password } = req.body;
+    const QueryLogin = `SELECT * FROM users WHERE email = '${email}'`;
+
+    const isCheckEmail = await sequelizeConfig.query(QueryLogin, { type: QueryTypes.SELECT });
+
+    if (!isCheckEmail.length) {
+      req.flash("danger", "Email has not been registered");
+      return res.redirect("/login");
+    }
+
+    await bcrypt.compare(password, isCheckEmail[0].password, function (err, result) {
+      if (!result) {
+        req.flash("danger", "Password Wrong");
+        return res.redirect("/login");
+      } else {
+        req.session.isLogin = true;
+        req.session.user = isCheckEmail[0].name;
+        req.flash("succses", "Login Succses");
+        return res.redirect("/home");
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function formRegister(req, res) {
   res.render("register");
 }
+
+async function register(req, res) {
+  try {
+    let { name, email, password } = req.body;
+
+    bcrypt.hash(password, 10, async function (err, dataHase) {
+      if (err) {
+        res.redirect("/register");
+      } else {
+        const Queryuser = `INSERT INTO users(
+          name, email, password,"createdAt", "updatedAt")
+          VALUES ('${name}', '${email}','${dataHase}', NOW(), NOW())`;
+
+        await sequelizeConfig.query(Queryuser);
+
+        res.redirect("/login");
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// async function register(req, res) {
+//   try {
+//     let { name, email, password } = req.body;
+
+//     await sequelizeConfig.query(`INSERT INTO users(name, email, password, "createAt","updateAt") VALUES ('${name}', '${email}', '${password}', NOW(), NOW())`);
+
+//     res.redirect("/register");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 function contact(req, res) {
   res.render("contact");

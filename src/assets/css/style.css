@@ -109,6 +109,19 @@ nav .hamburger {
   text-decoration: none;
   padding: 10px;
 }
+/* ALERT DANGER */
+.alert-danger {
+  width: 100%;
+  margin-top: 68px;
+  background-color: rgb(240, 128, 128);
+  display: flex;
+  justify-content: center;
+  border: 2px solid red;
+}
+.alert-danger-container {
+  padding: 10px;
+  color: rgb(126, 6, 6);
+}
 
 /* Form  */
 
@@ -201,5 +214,9 @@ form div button:hover {
 
   #subject {
     width: 300px;
+  }
+
+  .alert-danger {
+    margin-top: 50px;
   }
 }

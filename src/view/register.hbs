@@ -17,17 +17,16 @@
       <div class="left">
         <ul>
           <img src="../assets/img/logo2.png" alt="" />
-          <li><a href="/home">Home</a></li>
+          {{! <li><a href="/home">Home</a></li>
           <li><a href="/blog">My Project</a></li>
-          <li><a href="/testi">Testimonial</a></li>
+          <li><a href="/testi">Testimonial</a></li> }}
         </ul>
       </div>
 
       <div class="right">
         <ul>
           <li><a href="/register">Register</a></li>
-          <li><a href="/login">Login</a></li>
-          <a href="/contact" class="btn">Contact Me</a>
+          <a href="/login" class="btn">Login</a>
         </ul>
       </div>
 
@@ -49,7 +48,7 @@
 
     <!-- NAVBAR END -->
     <!-- INPUT FORM -->
-    <form>
+    <form method="post" action="/register">
       <div class="title">
         <h1>REGIS<span>TRATION</span></h1>
       </div>
@@ -57,17 +56,17 @@
 
       <div class="nama">
         <label for="nama">Name</label>
-        <input type="text" id="nama" />
+        <input type="text" id="nama" name="name" />
       </div>
 
       <div class="email">
         <label for="email">Email</label>
-        <input type="email" id="email" />
+        <input type="email" id="email" name="email" />
       </div>
 
       <div class="nama">
         <label for="password">Password</label>
-        <input type="password" id="password" />
+        <input type="password" id="password" name="password" />
       </div>
 
       <div>
