@@ -25,8 +25,8 @@
 
       <div class="right">
         <ul>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/login">Login</a></li>
+          {{!-- <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li> --}}
            <a href="/contact" class="btn">Contact Me</a>
         </ul>
       </div>
@@ -60,46 +60,9 @@
               <label for="input-blog-title">Project Name</label>
               <input id="input-blog-title" name="title" />
             </div>
-            <div class="date">
-              <div class="date-2">
-                <label for="start" class="start">Start Date</label>
-                <input type="date" id="start" name="startDate" />
-              </div>
-
-              <div class="date-3">
-                <label for="end" class="end">End Date</label>
-                <input type="date" id="end" name="endDate" />
-              </div>
-            </div>
             <div>
               <label for="input-blog-content">Description</label>
               <textarea id="input-blog-content" cols="30" rows="10" name="content"></textarea>
-            </div>
-
-            <div class="checkbox">
-              <div class="techno"><label>Technologies</label></div>
-              <div class="checkbox-item">
-                <div class="checkbox-item-1" style="margin-left: 18px" >
-                  <input type="checkbox" id="nodejs" name="nodejs" value="fa-brands fa-node-js  " />
-                  <label for="node-js">Node JS</label>
-                </div>
-                <div class="checkbox-item-1" style="margin-left: 18px">
-                  <input type="checkbox" id="golang" name="golang" value="a-brands fa-golang " />
-                  <label for="golang">Golang</label>
-                </div>
-              
-              </div>
-
-              <div class="checkbox-item">
-                <div class="checkbox-item-1" style="margin-left: 18px">
-                  <input type="checkbox" id="react-js" name="react" value="fa-brands fa-react  " />
-                  <label for="react">React JS</label>
-                </div>
-                <div class="checkbox-item-1" style="margin-left: 18px">
-                  <input type="checkbox" id="javascript" name="js" value="fa-brands fa-js  " />
-                  <label for="javascript">Javascript</label>
-                </div>
-              </div>
             </div>
 
             <div>
@@ -109,7 +72,7 @@
                   <p>Attach File</p>
                   <img src="../assets/img/file.png" alt="file" />
                 </label>
-                <input type="file" id="input-blog-image" hidden />
+                <input type="file" name="image" id="input-blog-image" hidden />
               </div>
             </div>
             <div class="button-group">
@@ -136,13 +99,15 @@
             </div>
             <div class="blog-title">
               <h1><a href="/blogdetail/{{this.id}}" target="_blank">{{this.title}}</a></h1>
-              <h5>Durasi : {{this.diff}}</h5> 
+              {{!-- <h5>Durasi : {{this.diff}}</h5>  --}}
             </div>
             <div class="blog-detail">
               <p class="p-1">{{this.content}}</p>
               <p class="p-1">{{this.author}}</p>
+              <p class="p-1">{{this.createdAt}}</p>
+
             </div>
-            <div class="blog-icon">
+            {{!-- <div class="blog-icon">
               {{#if this.js}}
               <img src="../assets/img/js.svg" alt="">
               {{/if}}
@@ -158,7 +123,7 @@
               {{#if this.nodejs}}
               <img src="../assets/img/node.svg" alt="">
               {{/if}}
-            </div>
+            </div> --}}
             <div class="btn-group">
               <a class="btn-edit" href="/edit-blog/{{@index}}">Edit Post</a>
               <a class="btn-post" href="/delete-blog/{{this.id}}">Delete Post</a>
@@ -166,6 +131,7 @@
             <div class="blog-time">
               <p class="p-4"></p>
               {{!-- ${getDistanceTime(dataBlog[index].postAt)} --}}
+              {{!-- {{this.updatedAt}} --}}
             </div>
           </div>
       </div>

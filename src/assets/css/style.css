@@ -123,6 +123,19 @@ nav .hamburger {
   color: rgb(126, 6, 6);
 }
 
+.alert-succses {
+  width: 100%;
+  margin-top: 68px;
+  background-color: rgb(141, 240, 128);
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(68, 255, 0);
+}
+.alert-succses-container {
+  padding: 10px;
+  color: rgb(6, 126, 50);
+}
+
 /* Form  */
 
 form {

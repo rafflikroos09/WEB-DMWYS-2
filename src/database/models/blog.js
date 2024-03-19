@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       image: DataTypes.STRING,
       content: DataTypes.TEXT,
+      author: DataTypes.INTEGER,
       // start_Date: DataTypes.DATE,
       // end_Date: DataTypes.DATE,
       // nodejs: DataTypes.BOOLEAN,

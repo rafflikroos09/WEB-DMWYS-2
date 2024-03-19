@@ -1,9 +1,9 @@
-import express from "express";
-import { Sequelize, QueryTypes } from "sequelize";
-import connection from "./src/config/connection.js";
-import bcrypt from "bcrypt";
-import session from "express-session";
-import flash from "express-flash";
+const { Sequelize, QueryTypes } = require("sequelize");
+const express = require("express");
+const connection = require("./src/config/connection.json");
+const bcrypt = require("bcrypt");
+const session = require("express-session");
+const flash = require("express-flash");
 
 const app = express();
 const port = 3000;
@@ -162,6 +162,7 @@ async function login(req, res) {
       } else {
         req.session.isLogin = true;
         req.session.user = isCheckEmail[0].name;
+        req.session.idUser = isCheckEmail[0].id;
         req.flash("succses", "Login Succses");
         return res.redirect("/home");
       }
@@ -189,6 +190,7 @@ async function register(req, res) {
 
         await sequelizeConfig.query(Queryuser);
 
+        req.flash("succses", "Register Succesfuly");
         res.redirect("/login");
       }
     });
@@ -215,41 +217,14 @@ function contact(req, res) {
 
 async function handleBlog(req, res) {
   try {
-    // const { title, startDate, endDate, content, nodejs, golang, react, js } = req.body;
     const { title, content } = req.body;
     const image = "https://id.pinterest.com/pin/503840277078970767/";
-    // const diff = getDiffDate(new Date(startDate), new Date(endDate));
-    // const start_Date = new Date(startDate).toISOString();
-    // const end_Date = new Date(endDate).toISOString();
-    // const is_nodejs = nodejs ? true : false;
-    // const is_react = react ? true : false;
-    // const is_js = js ? true : false;
-    // const is_golang = golang ? true : false;
-
-    // const QueryName = `INSERT INTO blogs(title, image, content, "createAt", "updateAt")
-    // VALUES ('${title}', '${image}', '${content}', NOW(), NOW())`;
-
-    // const QueryName = `INSERT INTO blogs(
-    //   title, image, content, start_Date, end_Date, nodejs, react, js,golang, "createdAt", "updatedAt")
-    //   VALUES ('${title}', '${image}','${start_Date}','${end_Date}','${is_nodejs}', '${is_react}', '${is_golang}','${is_js}','${diff}','${content}', NOW(), NOW())`;
 
     const QueryName = `INSERT INTO blogs(
         title, image, content,"createdAt", "updatedAt")
         VALUES ('${title}', '${image}','${content}', NOW(), NOW())`;
 
     await sequelizeConfig.query(QueryName);
-
-    // data.push({
-    //   title,
-    //   startDate,
-    //   endDate,
-    //   content,
-    //   nodejs,
-    //   golang,
-    //   react,
-    //   js,
-    //   diff: getDiffDate(new Date(startDate), new Date(endDate)),
-    // });
 
     res.redirect("/blog");
   } catch (error) {
